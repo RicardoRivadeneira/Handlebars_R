@@ -35,5 +35,5 @@ Puedes personalizar el proyecto de la siguiente manera:
 - **Lógica de Datos**: Ajusta la lógica de manejo de datos en `js/app.js` para adaptarla a tus necesidades específicas.
 - **Plantillas de Handlebars**: Personaliza las plantillas de Handlebars en `index.html` según tus preferencias.
 
-##Elaborado por
+## Elaborado por
 Ricardo Rivadeneira
