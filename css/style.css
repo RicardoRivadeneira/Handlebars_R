@@ -1,0 +1,101 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #686464;
+}
+
+#app {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#tecnologiaInput,
+#imagenInput {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 10px;
+    width: 70%; /* Ajustado el ancho del input */
+    max-width: 300px; /* Ancho máximo para evitar que sea demasiado ancho en pantallas grandes */
+    box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
+    display: none; /* Inicialmente oculto */
+}
+
+.elemento-imagen {
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #e0f7fa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    word-break: break-all;
+}
+
+li:hover {
+    transform: scale(1.02);
+}
+
+.delete-icon {
+    cursor: pointer;
+    color: #f44336;
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+
+/* Reglas de medios para hacer la página responsive */
+@media only screen and (max-width: 600px) {
+    #app {
+        max-width: 100%;
+    }
+
+    #tecnologiaInput,
+    #imagenInput {
+        width: 100%; /* Ajuste para pantallas más pequeñas */
+        max-width: none; /* Restablece el ancho máximo */
+    }
+}

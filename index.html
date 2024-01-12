@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Handlebars</title>
+    <!-- Agrega enlaces a Handlebars y tu archivo JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div id="app">
+        <!-- Aquí se insertará dinámicamente el contenido generado por Handlebars -->
+    </div>
+
+    <script id="plantilla" type="text/x-handlebars-template">
+        <h1>{{titulo}}</h1>
+        <p>{{descripcion}}</p>
+
+        <!-- Lista de elementos de texto -->
+        <ul>
+            {{#each elementos}}
+                {{#if tipoTexto}}
+                    <li>
+                        {{contenido}}
+                        <span class="delete-icon" onclick="eliminarElemento('{{@index}}')">Eliminar</span>
+                    </li>
+                {{/if}}
+            {{/each}}
+        </ul>
+
+        <div class="input-container">
+            <button onclick="mostrarInput('texto')">Agregar Texto</button>
+            <input type="text" id="tecnologiaInput" placeholder="Contenido" onkeypress="agregarConEnter(event)">
+        </div>
+
+        <p>Proporciona una forma de definir y renderizar plantillas con marcadores de posición que se llenan con datos específicos durante la ejecución de la aplicación.</p>
+
+        <!-- Lista de elementos de imagen -->
+        <ul>
+            {{#each elementos}}
+                {{#unless tipoTexto}}
+                    <li>
+                        <img src="{{contenido}}" alt="Imagen" class="elemento-imagen">
+                        <span class="delete-icon" onclick="eliminarElemento('{{@index}}')">Eliminar</span>
+                    </li>
+                {{/unless}}
+            {{/each}}
+        </ul>
+
+        <div class="input-container">
+            <button onclick="mostrarInput('imagen')">Agregar Imagen</button>
+            <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="procesarImagen(this)">
+        </div>        
+        <p><b>Elaborado por:</b> Ricardo Rivadeneira</p>
+    </script>
+</body>
+</html>
